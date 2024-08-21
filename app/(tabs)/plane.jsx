@@ -17,8 +17,6 @@ export default function TabThreeScreen  () {
     { id: 8, image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username: 'johndoe8' },
     { id: 9, image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username: 'johndoe2' },
     { id: 10, image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username: 'johndoe1' },
-    { id: 11, image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username: 'johndoe2' },
-    { id: 12, image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username: 'johndoe3' },
   ]
 
   const [users, setUsers] = useState(data)
