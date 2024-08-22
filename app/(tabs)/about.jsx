@@ -1,97 +1,102 @@
-import React, { useState } from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList } from 'react-native'
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { StyleSheet, Image, Platform } from 'react-native';
 
+import { Collapsible } from '@/components/Collapsible';
+import { ExternalLink } from '@/components/ExternalLink';
+import ParallaxScrollView from '@/components/ParallaxScrollView';
+import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/components/ThemedView';
 
-export default function TabThreeScreen  () {
-  const data = [
-    { id: 1, image: 'https://images.app.goo.gl/tPpEtAhKyzDuT1W2A.png',    username: 'C-47' },
-    { id: 2, image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username: 'Boeing720' },
-    { id: 3, image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username: 'Boeing727' },
-    { id: 5, image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username: 'Boeing737' },
-    { id: 6, image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username: 'boeing757' },
-    { id: 7, image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username: 'Boeing767' },
-    { id: 8, image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username: 'Boeing777' },
-    { id: 9, image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username: 'Boeing787' },
-  ]
-
-  const [users, setUsers] = useState(data)
+export default function TabTwoScreen() {
   return (
-    <SafeAreaProvider>
-    <SafeAreaView style={styles.container}>
-    <View style={styles.container}>
-      <View style={styles.body}>
-        <FlatList
-          enableEmptySections={true}
-          data={users}
-          keyExtractor={item => item.id}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity>
-                <View style={styles.box}>
-                  <Image style={styles.image} source={{ uri: item.image }} />
-                  <Text style={styles.username}>{item.username}</Text>
-                  <View style={styles.iconContent}>
-                    <Image
-                      style={styles.icon}
-                      source={{ uri: 'https://img.icons8.com/color/70/000000/plus.png' }}
-                    />
-                  </View>
-                </View>
-              </TouchableOpacity>
-            )
-          }}
-        />
-      </View>
-    </View>
-    </SafeAreaView>
-    </SafeAreaProvider>
-  )
+    <ParallaxScrollView
+      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
+      headerImage={<Ionicons size={310} name="code-slash" style={styles.headerImage} />}>
+      <ThemedView style={styles.titleContainer}>
+        <ThemedText type="title">Explore</ThemedText>
+      </ThemedView>
+      <ThemedText>This app includes example code to help you get started.</ThemedText>
+      <Collapsible title="File-based routing">
+        <ThemedText>
+          This app has two screens:{' '}
+          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
+          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
+        </ThemedText>
+        <ThemedText>
+          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
+          sets up the tab navigator.
+        </ThemedText>
+        <ExternalLink href="https://docs.expo.dev/router/introduction">
+          <ThemedText type="link">Learn more</ThemedText>
+        </ExternalLink>
+      </Collapsible>
+      <Collapsible title="Android, iOS, and web support">
+        <ThemedText>
+          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
+          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
+        </ThemedText>
+      </Collapsible>
+      <Collapsible title="Images">
+        <ThemedText>
+          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
+          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
+          different screen densities
+        </ThemedText>
+        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
+        <ExternalLink href="https://reactnative.dev/docs/images">
+          <ThemedText type="link">Learn more</ThemedText>
+        </ExternalLink>
+      </Collapsible>
+      <Collapsible title="Custom fonts">
+        <ThemedText>
+          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText> to see how to load{' '}
+          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
+            custom fonts such as this one.
+          </ThemedText>
+        </ThemedText>
+        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
+          <ThemedText type="link">Learn more</ThemedText>
+        </ExternalLink>
+      </Collapsible>
+      <Collapsible title="Light and dark mode components">
+        <ThemedText>
+          This template has light and dark mode support. The{' '}
+          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
+          what the user's current color scheme is, and so you can adjust UI colors accordingly.
+        </ThemedText>
+        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
+          <ThemedText type="link">Learn more</ThemedText>
+        </ExternalLink>
+      </Collapsible>
+      <Collapsible title="Animations">
+        <ThemedText>
+          This template includes an example of an animated component. The{' '}
+          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
+          the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText> library
+          to create a waving hand animation.
+        </ThemedText>
+        {Platform.select({
+          ios: (
+            <ThemedText>
+              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
+              component provides a parallax effect for the header image.
+            </ThemedText>
+          ),
+        })}
+      </Collapsible>
+    </ParallaxScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'left',
-        backgroundColor: '#ECF0F1',
-      },
-  image: {
-    width: 60,
-    height: 60,
+  headerImage: {
+    color: '#808080',
+    bottom: -90,
+    left: -35,
+    position: 'absolute',
   },
-  body: {
-    backgroundColor: '#E6E6FA',
-  },
-  box: {
-    marginHorizontal: 20,
-    marginTop: 5,
-    marginBottom: 5,
-    backgroundColor: '#FFFFFF',
+  titleContainer: {
     flexDirection: 'row',
-    shadowColor: 'black',
-    shadowOpacity: 0.2,
-    shadowOffset: {
-      height: 1,
-      width: -2,
-    },
-    elevation: 2,
+    gap: 8,
   },
-  username: {
-    color: '#20B2AA',
-    fontSize: 22,
-    alignSelf: 'center',
-    marginLeft: 10,
-  },
-  iconContent: {
-    width: 60,
-    height: 60,
-    backgroundColor: '#40E0D0',
-    marginLeft: 'auto',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  icon: {
-    width: 40,
-    height: 40,
-  },
-})
+});
