@@ -39,7 +39,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'airplane' : 'airplane-outline'} color={color} />
           ),
-        }}
+        }} 
       />
       <Tabs.Screen
         name="about"

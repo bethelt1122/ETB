@@ -5,18 +5,14 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 export default function TabThreeScreen  () {
   const data = [
-    { id: 1, image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username: 'johndoe1' },
-    { id: 2, image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username: 'johndoe2' },
-    { id: 3, image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username: 'johndoe3' },
-    { id: 4, image: 'https://bootdey.com/img/Content/avatar/avatar4.png', username: 'johndoe4' },
-    { id: 5, image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username: 'johndoe5' },
-    { id: 6, image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username: 'johndoe6' },
-    { id: 7, image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username: 'johndoe7' },
-    { id: 8, image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username: 'johndoe8' },
-    { id: 9, image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username: 'johndoe2' },
-    { id: 10, image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username: 'johndoe1' },
-    { id: 11, image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username: 'johndoe2' },
-    { id: 12, image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username: 'johndoe3' },
+    { id: 1, image: 'https://images.app.goo.gl/tPpEtAhKyzDuT1W2A.png',    username: 'C-47' },
+    { id: 2, image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username: 'Boeing720' },
+    { id: 3, image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username: 'Boeing727' },
+    { id: 5, image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username: 'Boeing737' },
+    { id: 6, image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username: 'boeing757' },
+    { id: 7, image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username: 'Boeing767' },
+    { id: 8, image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username: 'Boeing777' },
+    { id: 9, image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username: 'Boeing787' },
   ]
 
   const [users, setUsers] = useState(data)
@@ -56,7 +52,7 @@ export default function TabThreeScreen  () {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'left',
         backgroundColor: '#ECF0F1',
       },
   image: {
