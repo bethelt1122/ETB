@@ -4,6 +4,7 @@ import {
   Text,
   View,
   Image,
+  ScrollView,
   TouchableOpacity,
   Platform,
 } from "react-native";
@@ -91,9 +92,10 @@ export default function TabThreeScreen() {
                     style={{ width: 150, height: 105.8 }}
                   />
                   <Text style={styles.text}>
-                    This is some text next to the image!This is some text next
-                    to the image! This is some text next to the image! This is
-                    some text next to the image!
+                    C-47 the first aircraft that Ethiopian airlines has operated
+                    which could carry 28 passengers, 18-22 fully equipped
+                    paratroopers, about 6,000 lbs. of cargo or 18 stretchers and
+                    three medical personnel.
                   </Text>
                 </View>
               </CollapseBody>
@@ -107,7 +109,7 @@ export default function TabThreeScreen() {
                   }}
                 >
                   <Text style={{ fontSize: 40, padding: 10, color: "#333333" }}>
-                    C47
+                    720
                   </Text>
                 </View>
               </CollapseHeader>
@@ -120,13 +122,14 @@ export default function TabThreeScreen() {
                   }}
                 >
                   <Image
-                    source={require("@/assets/images/c47.jpg")}
+                    source={require("@/assets/images/720.jpg")}
                     style={{ width: 150, height: 105.8 }}
                   />
                   <Text style={styles.text}>
-                    This is some text next to the image!This is some text next
-                    to the image! This is some text next to the image! This is
-                    some text next to the image!
+                    The Boeing 720 is a four-engined low-wing cantilever
+                    monoplane. it had a lighter structure through use of lighter
+                    forged metal parts and thinner fuselage skins and
+                    structures.
                   </Text>
                 </View>
               </CollapseBody>
@@ -139,7 +142,7 @@ export default function TabThreeScreen() {
                     backgroundColor: "#68a6b3",
                   }}
                 >
-                  <Text style={{ fontSize: 40, padding: 10 }}>C47</Text>
+                  <Text style={{ fontSize: 40, padding: 10 }}>727</Text>
                 </View>
               </CollapseHeader>
               <CollapseBody>
